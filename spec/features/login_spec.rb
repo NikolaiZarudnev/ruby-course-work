@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'the log in process', type: :feature do
@@ -11,7 +13,6 @@ describe 'the log in process', type: :feature do
                 tired: 0,
                 money: 0)
   end
-  # rubocop:disable RSpec/ExampleLength
 
   it 'go to page current user' do
     visit '/session/new'
@@ -30,5 +31,4 @@ describe 'the log in process', type: :feature do
     click_button 'Save'
     expect(page).to have_text('LOG OUT Records')
   end
-  # rubocop:enable RSpec/ExampleLength
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'spec_helper'
 describe 'the sign up process', type: :feature do
-  # rubocop:disable RSpec/ExampleLength
   it 'go to page current user' do
     visit '/users/new'
     fill_in 'Email', with: 'user1@gmail.com'
@@ -21,5 +22,4 @@ describe 'the sign up process', type: :feature do
     click_button 'Create User'
     expect(page).to have_text('LOG OUT Records')
   end
-  # rubocop:enable RSpec/ExampleLength
 end
