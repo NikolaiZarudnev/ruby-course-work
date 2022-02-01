@@ -52,10 +52,8 @@ class ProductsController < ApplicationController
 
   def image_load
     uploaded_io = product_params['image']
-    File.open(Rails.root.join('app', 'assets', 'images', 'product_img', uploaded_io.original_filename),
-              'wb') do |file|
-      file.write(uploaded_io.read)
-    end
+    File.binwrite(Rails.root.join('app', 'assets', 'images', 'product_img', uploaded_io.original_filename),
+                  uploaded_io.read)
     params['product']['image'] = uploaded_io.original_filename
   end
 end
