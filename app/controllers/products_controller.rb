@@ -47,12 +47,12 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :color, :image)
+    params.require(:product).permit(:title, :description, :price, :color, :image)
   end
 
   def image_load
     uploaded_io = product_params['image']
-    File.binwrite(Rails.root.join('app', 'assets', 'images', 'product_img', uploaded_io.original_filename),
+    File.binwrite(Rails.root.join('app', 'assets', 'images', uploaded_io.original_filename),
                   uploaded_io.read)
     params['product']['image'] = uploaded_io.original_filename
   end
