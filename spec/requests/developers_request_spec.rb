@@ -13,6 +13,7 @@ RSpec.describe 'Developers', type: :request do
 
     it 'assigns the all developers' do
       subject { Developer.all }
+
       expect(subject).to eq('test')
     end
   end

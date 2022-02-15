@@ -11,6 +11,7 @@ RSpec.describe 'Garments', type: :request do
 
     it 'assigns the all garments' do
       subject { Garment.all }
+
       expect(subject).to eq('test')
     end
   end
