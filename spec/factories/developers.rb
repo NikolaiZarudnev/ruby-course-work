@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :developer do
     title { 'MyString' }
     description { 'MyString' }
-    image { 'MyString' }
+    image { 'none.jpg' }
   end
 end

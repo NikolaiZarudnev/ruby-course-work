@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  it { is_expected.to validate_presence_of :title }
-  it { is_expected.to validate_presence_of :description }
-  it { is_expected.to validate_presence_of :price }
+  it 'valid title' do
+    developer = Developer.create(title: 'test', description: 'test')
+    product = developer.products.create(title: 'test', description: 'test', price: 10.0)
+    expect(product).to be_valid
+  end
 end
